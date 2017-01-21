@@ -70,7 +70,7 @@
     (rule id11
           (if (animal is ungulate)
               (animal has long neck)
-            (animal has long regs)
+            (animal has long legs)
             (animal has dark spots))
           (then (animal is giraffe)))
     (rule id12
@@ -80,19 +80,19 @@
     (rule id13
           (if (animal is bird)
               (animal does not fly)
-            (animal has long neck)
-            (animal has long legs)
-            (animal is black and white))
+              (animal has long neck)
+              (animal has long legs)
+              (animal is black and white))
           (then (animal is ostrich)))
     (rule id14
           (if (animal is bird)
               (animal does not fly)
-            (animal swims)
-            (animal is black and white))
+              (animal swims)
+              (animal is black and white))
           (then (animal is penguin)))
     (rule id15
           (if (animal is bird)
-              (animal flys well))
+              (animal flies well))
           (then (animal is albatross))))
   "This includes 15 rules for identifying animals.")
 
@@ -129,7 +129,7 @@
   "proceeds one step of inference from IF-part to THEN-part of rules."
   (loop for rule in *rules*
       when (tryrule rule)
-      do (return t)))
+      return t))
 
 (defun tryrule (rule)
   "tests IF-part of <rule> and establishes THEN-part with one step inference."
