@@ -7,6 +7,7 @@
 ;;;
 
 (defpackage :ps
+  (:use :cl) 
   (:documentation "Common Lisp version of a expert system in Chapter 18, Winston's LISP, 1st edition."))
 
 (in-package :ps)
